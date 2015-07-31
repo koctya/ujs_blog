@@ -15,3 +15,9 @@
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
+
+// log ajax errors so we're not in dark when nothing happens.
+$(document).on("ajax:error", function(xhr, status, error) {
+  console.log(status.responseText);
+  return console.log(error);
+});
